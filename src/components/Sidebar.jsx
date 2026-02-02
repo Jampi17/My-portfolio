@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { useI18n } from '../contexts/I18nContext.jsx'
-const profilePublicUrl = new URL('foto.png', import.meta.env.BASE_URL).href
+const profilePublicUrl = '/foto.png'
 import profile from '../data/profile.json'
 import cvUrl from '../../archivos/CV_Jeampierre_Pacori_Condori.pdf?url'
 
