@@ -3,8 +3,10 @@ import React, { createContext, useContext, useEffect, useMemo, useState } from '
 const dict = {
   es: {
     'nav.home': 'INICIO',
-    'nav.hire': 'CONTRÁTAME',
-    'btn.hire': 'Contrátame',
+    'nav.projects': 'PROYECTOS',
+    'nav.services': 'SERVICIOS',
+    'nav.hire': 'CONTÁCTAME',
+    'btn.hire': 'Contáctame',
     'btn.cv': 'Descargar CV',
     'btn.contact': 'Contactar',
     'title.main': 'DESARROLLADOR DE SOFTWARE ESPECIALIZADO EN PYTHON, ODOO Y SISTEMAS EMPRESARIALES',
@@ -59,10 +61,15 @@ const dict = {
     'service.management': 'Sistemas de gestión (inventarios, reservas, clientes)',
     'service.support': 'Soporte y mejoras de sistemas existentes',
     'section.final.text': 'Estoy abierto a oportunidades laborales, prácticas profesionales y proyectos freelance relacionados a desarrollo de software y sistemas empresariales.',
+    'available.freelance': 'Disponible para trabajar como freelance.',
+    'btn.whatsapp': 'Contactar por WhatsApp',
+    'whatsapp.msg': 'Hola Jeampier, estoy interesado en contratarte como freelance. ¿Podemos conversar?',
     'footer.copy': 'Copyright Jeampier©2026. Todos los derechos reservados.'
   },
   en: {
     'nav.home': 'HOME',
+    'nav.projects': 'PROJECTS',
+    'nav.services': 'SERVICES',
     'nav.hire': 'HIRE ME',
     'btn.hire': 'Hire Me',
     'btn.cv': 'Download CV',
@@ -119,6 +126,9 @@ const dict = {
     'service.management': 'Management systems (inventory, bookings, clients)',
     'service.support': 'Support and improvements to existing systems',
     'section.final.text': "I'm open to job opportunities, internships and freelance projects related to software development and enterprise systems.",
+    'available.freelance': 'Available for freelance work. I can help with backend development, integrations and ERP customizations.',
+    'btn.whatsapp': 'Contact via WhatsApp',
+    'whatsapp.msg': "Hi Jeampier, I'm interested in hiring you as a freelancer. Can we talk?",
     'footer.copy': 'Copyright Jeampier©2026. All rights reserved.'
   }
 }

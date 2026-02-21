@@ -16,10 +16,11 @@ export default function Sidebar() {
         transition={{ duration: 0.6 }}
       />
       <div className="greeting">
-        <h1>JEAMPIER</h1>
+        <h1>JEAMPIERRE</h1>
         <h2>{t('greeting.role')}</h2>
         <p className="tagline">{t('tagline.main')}</p>
         <p className="value">{t('value.main')}</p>
+        <div className="availability">{t('available.freelance')}</div>
         <div className="meta">
           <span>{t('meta.location')}</span>
           <span>{t('meta.availability')}</span>
@@ -32,15 +33,16 @@ export default function Sidebar() {
         <p><a href={profile.portfolioUrl || '#'}>{t('contact.portfolio')}</a></p>
       </div>
       <div className="action-buttons">
-        <a href="#hire" className="btn btn-primary">{t('btn.hire')}</a>
-        <a href={cvUrl} className="btn btn-secondary" download="Jeampier-CV.pdf">{t('btn.cv')}</a>
+        {/* Contact button opens WhatsApp */}
+        <a aria-label={t('btn.contact')} href={`https://wa.me/${(profile.phone||'').replace(/\D/g,'').length===9? '51'+(profile.phone||'').replace(/\D/g,'') : (profile.phone||'').replace(/\D/g,'')}?text=${encodeURIComponent(t('whatsapp.msg'))}`} target="_blank" rel="noopener noreferrer" className="btn btn-primary">{t('btn.contact')}</a>
+        <a aria-label={t('btn.cv')} href={cvUrl} className="btn btn-secondary" download="Jeampier-CV.pdf">{t('btn.cv')}</a>
       </div>
       <div className="social-links">
         {[
-          ['f', '#'], ['𝕏', '#'], ['in', '#'], ['ig', '#']
+          ['in', 'https://www.linkedin.com/in/jeampierre-pacori-condori-976811354'], ['web', profile.portfolioUrl || '#']
         ].map(([label, href]) => (
-          <motion.a key={label} href={href} className="social-icon" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.98 }}>
-            {label}
+          <motion.a key={label} href={href} className="social-icon" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.98 }} target="_blank" rel="noopener noreferrer">
+            {label === 'in' ? 'in' : '🌐'}
           </motion.a>
         ))}
       </div>

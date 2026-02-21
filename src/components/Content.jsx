@@ -1,6 +1,7 @@
 import React, { forwardRef, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { useI18n } from '../contexts/I18nContext.jsx'
+import profile from '../data/profile.json'
 
 function useReveal(){
   useEffect(() => {
@@ -57,7 +58,7 @@ const Content = forwardRef(function Content(_, ref){
       <div className="parallax-bg" ref={bgRef} aria-hidden="true" />
       <h1 className="main-title typed-title" ref={titleRef}></h1>
       <div className="content-grid">
-        <motion.div className="content-block block-upwork"
+        <motion.div id="start" className="content-block block-upwork"
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.2 }}
@@ -132,7 +133,7 @@ const Content = forwardRef(function Content(_, ref){
         ))}
       </div>
 
-      <section className="projects" style={{ marginTop: '2.5rem' }}>
+      <section className="projects" id="projects" style={{ marginTop: '2.5rem' }}>
         <h2 className="section-title">{t('section.projects.title')}</h2>
         <div className="content-grid">
           <motion.div className="content-block block-project project-hotel" style={{ background:'var(--brand-2)' }}
@@ -152,7 +153,7 @@ const Content = forwardRef(function Content(_, ref){
         </div>
       </section>
 
-      <section className="services-section" style={{ marginTop: '2.5rem' }}>
+      <section className="services-section" id="services" style={{ marginTop: '2.5rem' }}>
         <h2 className="section-title">{t('section.services.title')}</h2>
         <ul className="service-list" style={{ marginTop: '1rem', lineHeight: 1.8 }}>
           <li>{t('service.odoo')}</li>
@@ -163,13 +164,7 @@ const Content = forwardRef(function Content(_, ref){
         </ul>
       </section>
 
-      <section className="final-contact" id="hire" style={{ marginTop: '2.5rem', textAlign: 'center' }}>
-        <p style={{ opacity: .9 }}>{t('section.final.text')}</p>
-        <div style={{ marginTop: '1rem', display: 'flex', gap: '1rem', justifyContent: 'center' }}>
-          <a href="#hire" className="btn btn-primary">{t('btn.contact')}</a>
-          <a href="#cv" className="btn btn-secondary">{t('btn.cv')}</a>
-        </div>
-      </section>
+      
     </main>
   )
 })
