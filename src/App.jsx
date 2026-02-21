@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import Header from './components/Header.jsx'
 import Sidebar from './components/Sidebar.jsx'
 import Content from './components/Content.jsx'
-import Footer from './components/Footer.jsx'
+// Footer removed per request
 import { useTheme } from './contexts/ThemeContext.jsx'
 
 export default function App(){
@@ -37,7 +37,6 @@ export default function App(){
         <Sidebar />
         <Content ref={contentRef} />
       </div>
-      <Footer />
     </div>
   )
 }

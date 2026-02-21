@@ -5,8 +5,10 @@ export default function Footer(){
   const { t } = useI18n()
   return (
     <footer>
-      <p>{t('footer.copy')}</p>
-      <div className="footer-logo">J</div>
+      <div className="footer-inner">
+        <p>{t('footer.copy')}</p>
+        <div className="footer-logo">J</div>
+      </div>
     </footer>
   )
 }

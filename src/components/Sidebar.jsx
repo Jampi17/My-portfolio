@@ -1,16 +1,16 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { useI18n } from '../contexts/I18nContext.jsx'
-const profilePublicUrl = '/foto.png'
+import fotoUrl from '../../images/foto.png'
 import profile from '../data/profile.json'
 import cvUrl from '../../archivos/CV_Jeampierre_Pacori_Condori.pdf?url'
 
-export default function Sidebar(){
+export default function Sidebar() {
   const { t } = useI18n()
   return (
     <aside className="sidebar">
       <motion.div className="profile-img"
-        style={{ backgroundImage: `url(${profilePublicUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+        style={{ backgroundImage: `url(${fotoUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
