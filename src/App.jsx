@@ -1,13 +1,15 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Header from './components/Header.jsx'
 import Sidebar from './components/Sidebar.jsx'
 import Content from './components/Content.jsx'
+import About from './pages/About.jsx'
 // Footer removed per request
 import { useTheme } from './contexts/ThemeContext.jsx'
 
 export default function App(){
   const { theme } = useTheme()
   const contentRef = useRef(null)
+  const [page, setPage] = useState('home') // 'home' | 'about'
 
   // Smooth scroll for internal links targeting sections within content
   useEffect(() => {
@@ -32,10 +34,16 @@ export default function App(){
 
   return (
     <div data-theme={theme}>
-      <Header />
+      <Header setActivePage={setPage} />
       <div className="main-container">
         <Sidebar />
-        <Content ref={contentRef} />
+        {page === 'home' ? (
+          <Content ref={contentRef} />
+        ) : (
+          <main className="content" id="about" ref={contentRef}>
+            <About />
+          </main>
+        )}
       </div>
     </div>
   )
