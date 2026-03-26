@@ -22,15 +22,6 @@ export default function Header({ setActivePage }){
             })
             setOpen(false)
           }}>{t('nav.home')}</a>
-          <a href="#projects" onClick={(e) => {
-            e.preventDefault()
-            if (setActivePage) setActivePage('home')
-            requestAnimationFrame(() => {
-              const el = document.getElementById('projects')
-              if(el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-            })
-            setOpen(false)
-          }}>{t('nav.projects')}</a>
           <a href="#services" onClick={(e) => {
             e.preventDefault()
             if (setActivePage) setActivePage('home')
@@ -40,12 +31,38 @@ export default function Header({ setActivePage }){
             })
             setOpen(false)
           }}>{t('nav.services')}</a>
+          <a href="#projects" onClick={(e) => {
+            e.preventDefault()
+            if (setActivePage) setActivePage('home')
+            requestAnimationFrame(() => {
+              const el = document.getElementById('projects')
+              if(el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            })
+            setOpen(false)
+          }}>{t('nav.projects')}</a>
           <a href="#about" onClick={(e) => {
             e.preventDefault()
             if (setActivePage) setActivePage('about')
-            // no scroll needed; About will be rendered
             setOpen(false)
-          }}>Acerca</a>
+          }}>{t('nav.about')}</a>
+          <a href="#blog" onClick={(e) => {
+            e.preventDefault()
+            if (setActivePage) setActivePage('home')
+            requestAnimationFrame(() => {
+              const el = document.getElementById('blog')
+              if(el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            })
+            setOpen(false)
+          }}>{t('nav.blog')}</a>
+          <a href="#contact" onClick={(e) => {
+            e.preventDefault()
+            if (setActivePage) setActivePage('contact')
+            requestAnimationFrame(() => {
+              const el = document.getElementById('contact')
+              if(el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            })
+            setOpen(false)
+          }}>{t('nav.contact')}</a>
           <div className="lang-switch" role="group" aria-label="Seleccionar idioma">
             <button className="lang-toggle" aria-pressed={lang === 'es'} onClick={() => setLang('es')}>ES</button>
             <button className="lang-toggle" aria-pressed={lang === 'en'} onClick={() => setLang('en')}>EN</button>

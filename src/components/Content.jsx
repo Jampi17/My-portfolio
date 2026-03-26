@@ -164,7 +164,38 @@ const Content = forwardRef(function Content(_, ref){
         </ul>
       </section>
 
-      
+      <section className="blog-section" id="blog" style={{ marginTop: '2.5rem' }}>
+        <h2 className="section-title">{t('section.blog.title')}</h2>
+        <div className="content-grid" style={{ marginTop: '1rem' }}>
+          <motion.article className="content-block block-project"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.45 }}>
+            <div className="block-title">{t('blog.item1.title')}</div>
+            <div className="block-subtitle">{t('blog.item1.subtitle')}</div>
+          </motion.article>
+          <motion.article className="content-block block-project"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.45, delay: 0.08 }}>
+            <div className="block-title">{t('blog.item2.title')}</div>
+            <div className="block-subtitle">{t('blog.item2.subtitle')}</div>
+          </motion.article>
+        </div>
+      </section>
+
+      <section className="final-contact" id="contact" style={{ marginTop: '2.5rem' }}>
+        <h2 className="section-title">{t('section.contact.title')}</h2>
+        <p style={{ marginTop: '.7rem' }}>{t('contact.cta')}</p>
+        <div className="action-buttons" style={{ marginTop: '1rem', maxWidth: 360 }}>
+          <a className="btn btn-primary" href={`mailto:${profile.email || 'jeampier.99k@gmail.com'}`}>{t('contact.email')}</a>
+          <a className="btn btn-secondary" href={`https://wa.me/${(profile.phone||'').replace(/\D/g,'').length===9? '51'+(profile.phone||'').replace(/\D/g,'') : (profile.phone||'').replace(/\D/g,'')}`} target="_blank" rel="noopener noreferrer">{t('contact.whatsapp')}</a>
+          <a className="btn btn-secondary" href={profile.portfolioUrl || 'https://jampi17.github.io/Misti-code/'} target="_blank" rel="noopener noreferrer">{t('contact.web')}</a>
+        </div>
+      </section>
+
     </main>
   )
 })
