@@ -21,3 +21,19 @@ cd react-portfolio
 npm install
 npm run dev
 ```
+
+## Publicar en GitHub Pages (rama main)
+Si publicas desde la rama `main`, GitHub Pages debe apuntar a la carpeta `docs`.
+
+1. Genera los archivos listos para Pages:
+
+```bash
+npm run deploy:main
+```
+
+2. En GitHub ve a **Settings > Pages** y configura:
+	- **Source**: Deploy from a branch
+	- **Branch**: `main`
+	- **Folder**: `/docs`
+
+Esto evita el error 404 al publicar en Pages desde `main`.
